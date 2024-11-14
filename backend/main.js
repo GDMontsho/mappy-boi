@@ -5,7 +5,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Request logger
 app.use((req, res, next) => {
   console.log(`[REQ] ${req.method} ${req.path}`);
   next();
@@ -24,6 +23,21 @@ app.get("/reports", (req, res) => {
 app.post("/reports", (req, res) => {
   console.log("Received", req.body);
   reports.push(req.body);
+
+  app.post("/reports", (req, res) => {
+    const { lat, lng, desc } = req.body;
+    if (
+      typeof lat !== "number" ||
+      typeof lng !== "number" ||
+      typeof desc !== "string"
+    ) {
+      return res
+        .status(400)
+        .json({ success: false, error: "Invalid data format" });
+    }
+    reports.push({ lat, lng, desc });
+    res.status(201).json({ success: true });
+  });
 
   res.status(201);
   res.json({ success: true });

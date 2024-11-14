@@ -1,3 +1,4 @@
+// Map.jsx
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 
 function LocationMarker({ position, setPosition }) {
@@ -17,10 +18,14 @@ export default function Map({ position, setPosition, reports }) {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+
       <LocationMarker position={position} setPosition={setPosition} />
-      {reports.map((report, i) => (
-        <Marker key={i} position={[report.lat, report.lng]} />
-      ))}
+
+      {reports.map((report, i) =>
+        report.lat && report.lng ? (
+          <Marker key={i} position={[report.lat, report.lng]} />
+        ) : null
+      )}
     </MapContainer>
   );
 }

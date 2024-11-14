@@ -11,7 +11,6 @@ export default function App() {
   const [desc, setDesc] = useState("");
   const [reports, setReports] = useState([]); // {lat, lng, desc}
 
-  // Fetch existing reports from the backend
   useEffect(() => {
     fetch("//localhost:9210/reports")
       .then((res) => res.json())
@@ -66,6 +65,7 @@ export default function App() {
         <textarea
           onChange={(e) => setDesc(e.target.value)}
           placeholder="Short description"
+          value={desc}
         >
           {desc}
         </textarea>
