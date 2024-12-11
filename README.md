@@ -1,8 +1,11 @@
-# Mappy boi is easy to break 
+# Mappy boi 
 
-This is an an app for citizens to report abandoned bicycles to their municipality.
+This is an an app for citizens to report abandoned bicycles to their municipality.  
+Users can use a map to pin where they last saw thir bicycles and write a description of  
+the lost bicycle.
 
 ## Technologies Used  
+
 **React:** Front-end is built using react  
 **Express:** Backend is built using express server  
 **MongoDB:** This is where our database is stored  
