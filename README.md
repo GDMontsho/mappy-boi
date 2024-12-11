@@ -3,12 +3,13 @@
 This is an an app for citizens to report abandoned bicycles to their municipality.
 
 ## Technologies Used  
-**React:** Front-end is built using react
-**Express:** Backend is built using express server
-**MongoDB:** This is where our database is stored
-**bcrypt:** We use this for password hashing
-**dotenv:** To load our environmental variables
-**Postman:** To test our backend results
+**React:** Front-end is built using react  
+**Express:** Backend is built using express server  
+**MongoDB:** This is where our database is stored  
+**bcrypt:** We use this for password hashing  
+**dotenv:** To load our environmental variables  
+**Postman:** To test our backend results  
+
 ## BACKEND
 
   - `$ cd backend`
